@@ -19,28 +19,75 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        this.bindEvents();
     },
-
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
     // deviceready Event Handler
     //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        console.log('Received Device Ready Event');
+        console.log('calling setup push');
+        app.setupPush();
     },
+    setupPush: function() {
+        console.log('calling push init');
+        var push = PushNotification.init({
+            "android": {
+                "senderID": "976341064339"
+            },
+            "browser": {},
+            "ios": {
+                "sound": true,
+                "vibration": true,
+                "badge": true,
+				"senderID": "976341064339"
+            },
+            "windows": {}
+        });
+        console.log('after init');
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-       /*  var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        push.on('registration', function(data) {
+            console.log('registration event: ' + data.registrationId);
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+            var oldRegId = localStorage.getItem('registrationId');
+            if (oldRegId !== data.registrationId) {
+                // Save new registration ID
+                localStorage.setItem('registrationId', data.registrationId);
+                // Post registrationId to your app server as the value has changed
+            }
 
-        console.log('Received Event: ' + id); */
-    }
+           document.getElementById("reg_id").value = data.registrationId;
+			
+			//var url = 'http://ec2-54-245-188-234.us-west-2.compute.amazonaws.com/pg/home/save_push_id/'+data.registrationId;
+			var url = 'http://www.saipalogbook.com?push_id='+data.registrationId;
+			
+			//Calling Website
+			app.website(url);
+        });
+
+        push.on('error', function(e) {
+            console.log("push error = " + e.message);
+        });
+
+        push.on('notification', function(data) {
+            console.log('notification event');
+            navigator.notification.alert(
+                data.message,         // message
+                null,                 // callback
+                data.title,           // title
+                'Ok'                  // buttonName
+            );
+       });
+    },
+	website: function(url) {
+		window.open(url,'_system','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
+	}
 };
-
-app.initialize();
