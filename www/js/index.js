@@ -88,6 +88,6 @@ var app = {
        });
     },
 	website: function(url) {
-		window.open(url,'_system','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
+		window.open(url,'_system','location=yes','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
 	}
 };
