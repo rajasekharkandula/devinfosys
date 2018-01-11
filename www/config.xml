@@ -20,6 +20,7 @@
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	<plugin name="cordova-plugin-file-transfer" spec="~1.6.1" source="npm"/>
     <icon src="www/img/logo.png" />
    <platform name="android">
 	<icon density="ldpi" src="res/icons/android/drawable-ldpi-icon.png" />
