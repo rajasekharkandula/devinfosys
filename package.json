@@ -7,11 +7,13 @@
   "displayName": "MobileApp",
   "dependencies": {
     "cordova-browser": "^5.0.3",
-    "cordova-plugin-statusbar": "~2.1.3",
-    "phonegap-plugin-push": "~1.8.0",
     "cordova-plugin-console": "~1.0.3",
     "cordova-plugin-dialogs": "~1.2.1",
-    "cordova-plugin-whitelist": "~1.2.1"
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-file-transfer": "^1.7.0",
+    "cordova-plugin-statusbar": "~2.1.3",
+    "cordova-plugin-whitelist": "~1.2.1",
+    "phonegap-plugin-push": "~1.8.0"
   },
   "cordova": {
     "plugins": {
@@ -21,7 +23,8 @@
       },
       "cordova-plugin-console": {},
       "cordova-plugin-dialogs": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "browser"

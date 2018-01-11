@@ -22,7 +22,14 @@
     "phonegap-plugin-push": {
       "SENDER_ID": "XXXXXXX",
       "PACKAGE_NAME": "com.saipa.logbook"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.saipa.logbook"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.saipa.logbook"
+    }
+  }
 }
