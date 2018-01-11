@@ -36,7 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
 		
-		app.website(url);
+		app.website('http://www.google.com');
 		
         //app.setupPush();
     },
