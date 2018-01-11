@@ -1,18 +1,4 @@
 {
-  "background_color": "#FFF",
-  "display": "standalone",
-  "name": "SAIPA",
-  "short_name": "SAIPA",
-  "version": "com.saipa.logbook",
-  "description": "SAIPA Application",
-  "author": "Devinfosys Team",
-  "icons": [
-    {
-      "src": "www/img/logo.png",
-      "type": "image/png",
-      "sizes": "undefinedxundefined"
-    }
-  ],
-  "start_url": "index.html",
-  "theme_color": "#ee6e73"
+  "name": "Push Demo",
+  "gcm_sender_id": "85075801930"
 }
