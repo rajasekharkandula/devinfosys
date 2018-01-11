@@ -36,7 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
 		
-		app.website('http://www.saipalogbook.com');
+		window.open('http://www.saipalogbook.com', '_self', 'location=no');
 		
         //app.setupPush();
     },

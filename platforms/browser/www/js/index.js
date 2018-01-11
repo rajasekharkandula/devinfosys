@@ -35,7 +35,10 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-        app.setupPush();
+		
+		window.open('http://www.saipalogbook.com', '_self', 'location=no');
+		
+        //app.setupPush();
     },
     setupPush: function() {
         console.log('calling push init');
@@ -88,6 +91,6 @@ var app = {
        });
     },
 	website: function(url) {
-		window.open(url,'_system','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
+		window.open(url,'_system','location=yes','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
 	}
 };
